@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="description" content="Laboratorio de Programación Avanzada Java"><meta name="viewport" content="width=device-width"><title>Respuestas de Desarrollo | Ayudantía Java</title><style>:root{--primary-color:#036;--secondary-color:#f1c40f;--bg-color:#f4f6f9;--text-color:#333;--code-bg:#1e1e1e}body{color:var(--text-color);background-color:var(--bg-color);margin:0;padding:0;font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;line-height:1.6}header{background-color:var(--primary-color);color:#fff;text-align:center;padding:2rem 0;box-shadow:0 4px 6px #0000001a}nav{z-index:1000;background-color:#024;flex-wrap:wrap;justify-content:center;display:flex;position:sticky;top:0}nav a{color:#fff;padding:1rem 1.5rem;font-weight:700;text-decoration:none;transition:background .3s}nav a:hover{background-color:var(--secondary-color);color:#024}.com-discord{background-color:#5865f2!important}.com-whatsapp{background-color:#25d366!important}.com-discord:hover,.com-whatsapp:hover{opacity:.9;color:#fff!important}.container{background:#fff;border-radius:8px;max-width:900px;margin:2rem auto;padding:2rem;box-shadow:0 2px 10px #0000000d}h2{color:var(--primary-color);border-bottom:2px solid #eee;margin-top:1.5rem;padding-bottom:.5rem}h3{color:#0056b3;margin-top:1.5rem}.definition-box{border-left:5px solid var(--primary-color);background-color:#e9ecef;border-radius:0 4px 4px 0;margin-bottom:1.5rem;padding:1rem}pre{background-color:var(--code-bg);color:#d4d4d4;border-radius:6px;padding:1.5rem;font-family:Courier New,Courier,monospace;overflow-x:auto}.explanation{background-color:#e3f2fd;border-radius:6px;margin-top:-10px;margin-bottom:2rem;padding:1rem}.quiz-container{background-color:#fff3cd;border:1px solid #ffeeba;border-radius:6px;margin-top:2rem;padding:1.5rem}.question{margin-bottom:1.5rem}.options label{cursor:pointer;margin-bottom:.5rem;display:block}button{background-color:var(--primary-color);color:#fff;cursor:pointer;border:none;border-radius:4px;margin-top:1rem;padding:10px 20px;font-size:1rem}button:hover{background-color:#004494}.result{margin-top:1rem;font-weight:700}.correct{color:green}.incorrect{color:red}
+</style></head><body><header><h1>Laboratorio de Programación Avanzada</h1><p>Aprende, analiza el código y ponte a prueba.</p></header><nav><a href="/">Inicio: Intro a Java</a><a href="/herencia">Módulo 1: Herencia</a><a href="/swing">Módulo 2: Swing y UX</a><a href="/ventanas">Módulo 3: Ventanas Múltiples</a><a href="/respuestas" style="background-color: #8b0000;">Respuestas :p</a></nav><main class="container"><div id="pantalla-bloqueo" style="text-align: center; margin-top: 4rem;"><h2>Área Restringida</h2><p>Esta sección contiene las soluciones de los Retos Prácticos. Ingresa la clave entregada por el profesor para acceder.</p><input type="password" id="input-pass" placeholder="Contraseña..." style="padding: 10px; font-size: 1rem; border-radius: 4px; border: 1px solid #ccc;"><button id="btn-desbloquear">Desbloquear</button><p id="msg-error" style="color: red; display: none; margin-top: 10px;">Contraseña incorrecta.</p></div><div id="contenido-respuestas" style="display: none;"><h2>Solucionario: Retos Prácticos</h2><p>Aquí tienes las soluciones esperadas para los retos de cada módulo. Recuerda que en programación puede haber más de una forma correcta de llegar al resultado.</p><hr style="margin: 2rem 0; border: 1px solid #eee;"><h3>Inicio: Introducción a Java</h3><div class="explanation"><strong>Reto 1: Calculadora Básica</strong><pre><code>public class Calculadora {
+    public static void main(String[] args) {
+        int a = 15;
+        int b = 20;
+        int suma = a + b;
+        System.out.println("El resultado de la suma es: " + suma);
+    }
+}</code></pre></div><div class="explanation"><strong>Reto 2: Perfil del Estudiante</strong><pre><code>public class PerfilEstudiante {
+    public static void main(String[] args) {
+        String nombre = "Ricardo";
+        int semestre = 4;
+        double promedio = 6.5;
+        
+        System.out.println("Hola, me llamo " + nombre + ", estoy cursando el semestre " 
+                           + semestre + " y mi promedio es de " + promedio);
+    }
+}</code></pre></div><hr style="margin: 2rem 0; border: 1px solid #eee;"><h3>Módulo 1: Herencia</h3><div class="explanation"><strong>Reto 1: Polimorfismo con Arreglos (En Main.java)</strong><pre><code>Empleado[] equipo = {empleado, gerente, vendedor};
+
+// Usando un ciclo for-each para recorrer el arreglo
+for (Empleado emp : equipo) {
+    System.out.println("Salario de " + emp.nombre + ": $" + emp.calcularSalario());
+}</code></pre></div><div class="explanation"><strong>Reto 2: Crear una nueva Subclase (Practicante.java)</strong><pre><code>package Herencia;
+
+public class Practicante extends Empleado {
+
+    public Practicante(String nombre, Double salarioBase) {
+        super(nombre, salarioBase);
+    }
+
+    @Override
+    public String toString() {
+        return "Practicante: " + super.toString();
+    }
+}</code></pre></div><hr style="margin: 2rem 0; border: 1px solid #eee;"><h3>Módulo 2: Swing y UX</h3><div class="explanation"><strong>Retos 1 y 2: Expandiendo el Formulario y Botón Limpiar</strong><pre><code>// 1. Cambiamos el layout a 4 filas
+panel.setLayout(new GridLayout(4, 2, 10, 10));
+
+// 2. Agregamos los nuevos campos de Edad (justo después del nombre)
+JTextField edadField = new JTextField();
+panel.add(new JLabel("Edad:"));
+panel.add(edadField);
+
+// 3. Creamos el botón limpiar y le damos la acción
+JButton btnLimpiar = new JButton("Limpiar");
+btnLimpiar.addActionListener(e -> {
+    nameField.setText("");
+    edadField.setText("");
+});
+
+// 4. Lo agregamos al panel en lugar de la celda vacía
+panel.add(btnLimpiar);
+panel.add(button); // El botón Submit original</code></pre></div><hr style="margin: 2rem 0; border: 1px solid #eee;"><h3>Módulo 3: Ventanas Múltiples</h3><div class="explanation"><strong>Reto 1: Botón de Envío (En VentanaPrincipal.java)</strong><pre><code>// Se agrega al final del método Componentes()
+JPanel panelBoton = new JPanel(new FlowLayout(FlowLayout.CENTER));
+JButton btnGuardar = new JButton("Guardar");
+
+btnGuardar.addActionListener(e -> {
+    if(nombretxt.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "El nombre es obligatorio", "Error", JOptionPane.ERROR_MESSAGE);
+    } else {
+        JOptionPane.showMessageDialog(this, "Estudiante guardado exitosamente");
+    }
+});
+
+panelBoton.add(btnGuardar);
+panelPrincipal.add(panelBoton);</code></pre></div><div class="explanation"><strong>Reto 2: Barra de Progreso Visual (En VentanaSplash.java)</strong><pre><code>// 1. Declarar la variable arriba: private JProgressBar barraProgreso;
+
+// 2. En prepararInterfaz(), inicializarla y agregarla al sur:
+barraProgreso = new JProgressBar(0, 100);
+barraProgreso.setStringPainted(true);
+contenido.add(barraProgreso, BorderLayout.SOUTH);
+
+// 3. En mostarYCargar(), actualizar el valor (setValue) dentro del Thread:
+actualizarEstado("Cargando módulos...");
+barraProgreso.setValue(30);
+Thread.sleep(1000);
+
+actualizarEstado("Conectando a la base de datos...");
+barraProgreso.setValue(60);
+Thread.sleep(1500);
+
+actualizarEstado("Iniciando interfaz...");
+barraProgreso.setValue(100);
+Thread.sleep(800);</code></pre></div><div style="text-align: center; margin-top: 2rem;"><button onclick="location.reload()" style="background-color: #555;">Bloquear nuevamente la página</button></div></div></main></body></html><script type="module">var e=document.getElementById(`btn-desbloquear`),t=document.getElementById(`input-pass`),n=document.getElementById(`pantalla-bloqueo`),r=document.getElementById(`contenido-respuestas`),i=document.getElementById(`msg-error`),a=`AyudantiaPA2026`;e?.addEventListener(`click`,()=>{t.value===a?(n.style.display=`none`,r.style.display=`block`):(i.style.display=`block`,t.value=``)}),t?.addEventListener(`keypress`,t=>{t.key===`Enter`&&e?.click()});</script>

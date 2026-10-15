@@ -1,8 +1,6 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="description" content="Laboratorio de Programación Avanzada Java"><meta name="viewport" content="width=device-width"><title>Módulo 1: Herencia | Ayudantía Java</title><style>:root{--primary-color:#036;--secondary-color:#f1c40f;--bg-color:#f4f6f9;--text-color:#333;--code-bg:#1e1e1e}body{color:var(--text-color);background-color:var(--bg-color);margin:0;padding:0;font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;line-height:1.6}header{background-color:var(--primary-color);color:#fff;text-align:center;padding:2rem 0;box-shadow:0 4px 6px #0000001a}nav{z-index:1000;background-color:#024;flex-wrap:wrap;justify-content:center;display:flex;position:sticky;top:0}nav a{color:#fff;padding:1rem 1.5rem;font-weight:700;text-decoration:none;transition:background .3s}nav a:hover{background-color:var(--secondary-color);color:#024}.com-discord{background-color:#5865f2!important}.com-whatsapp{background-color:#25d366!important}.com-discord:hover,.com-whatsapp:hover{opacity:.9;color:#fff!important}.container{background:#fff;border-radius:8px;max-width:900px;margin:2rem auto;padding:2rem;box-shadow:0 2px 10px #0000000d}h2{color:var(--primary-color);border-bottom:2px solid #eee;margin-top:1.5rem;padding-bottom:.5rem}h3{color:#0056b3;margin-top:1.5rem}.definition-box{border-left:5px solid var(--primary-color);background-color:#e9ecef;border-radius:0 4px 4px 0;margin-bottom:1.5rem;padding:1rem}pre{background-color:var(--code-bg);color:#d4d4d4;border-radius:6px;padding:1.5rem;font-family:Courier New,Courier,monospace;overflow-x:auto}.explanation{background-color:#e3f2fd;border-radius:6px;margin-top:-10px;margin-bottom:2rem;padding:1rem}.quiz-container{background-color:#fff3cd;border:1px solid #ffeeba;border-radius:6px;margin-top:2rem;padding:1.5rem}.question{margin-bottom:1.5rem}.options label{cursor:pointer;margin-bottom:.5rem;display:block}button{background-color:var(--primary-color);color:#fff;cursor:pointer;border:none;border-radius:4px;margin-top:1rem;padding:10px 20px;font-size:1rem}button:hover{background-color:#004494}.result{margin-top:1rem;font-weight:700}.correct{color:green}.incorrect{color:red}
-</style></head><body><header><h1>Laboratorio de Programación Avanzada</h1><p>Aprende, analiza el código y ponte a prueba.</p></header><nav><a href="/laboratorio-java/">Inicio: Intro a Java</a><a href="/laboratorio-java/herencia">Módulo 1: Herencia</a><a href="/laboratorio-java/swing">Módulo 2: Swing y UX</a><a href="/laboratorio-java/ventanas">Módulo 3: Ventanas Múltiples</a><a href="/laboratorio-java/respuestas" style="background-color: #8b0000;">Respuestas</a></nav><main class="container"><h2>Módulo 1: Herencia en Java</h2><div class="definition-box"><strong>¿Qué es la herencia?</strong><br>Mecanismo por el cual una clase (subclase) adquiere atributos y métodos de otra (superclase). Representa una relación «es un» (ej. un Gerente es un Empleado). Evita duplicar código.</div><ul><li><strong>extends:</strong> Indica herencia. Java no permite herencia múltiple de clases.</li><li><strong>protected:</strong> Permite que los atributos sean visibles y utilizables directamente por las subclases, pero ocultos para el exterior.</li><li><strong>super(...):</strong> Llama al constructor de la superclase y debe ser la primera instrucción.</li><li><strong>@Override:</strong> Indica que sobrescribes un método heredado. En Java, todas las clases heredan de <code>Object</code>, por lo que podemos sobrescribir el método <code>toString()</code>.</li></ul><hr style="margin: 2rem 0; border: 1px solid #eee;"><h3>Proyecto: EjercicioHerencia (Múltiples Archivos)</h3><div class="explanation"><strong>Organización del Código:</strong><br>En IDEs como NetBeans o Eclipse, cada clase pública va en su propio archivo. Aquí veremos cómo <code>Gerente</code> y <code>Vendedor</code> heredan de <code>Empleado</code>, sobrescribiendo el método <code>calcularSalario()</code> y el método <code>toString()</code>.</div><h4><code>Empleado.java</code> (La Superclase)</h4><pre><code>
-
-
-public class Empleado {
+</style></head><body><header><h1>Laboratorio de Programación Avanzada</h1><p>Aprende, analiza el código y ponte a prueba.</p></header><nav style="display: flex; align-items: center; padding: 0.5rem 1rem;"><!-- Contenedor del Logo (El margin-right: auto empuja el resto a la derecha) --><div style="margin-right: auto; display: flex; align-items: center;"><img src="/laboratorio-java/logoucsh.png" alt="Logo UCSH" style="height: 45px; object-fit: contain;"></div><a href="/laboratorio-java/">Inicio: Intro a Java</a><a href="/laboratorio-java/herencia">Módulo 1: Herencia</a><a href="/laboratorio-java/swing">Módulo 2: Swing y UX</a><a href="/laboratorio-java/ventanas">Módulo 3: Ventanas Múltiples</a><a href="/laboratorio-java/respuestas" style="background-color: #8b0000;">Respuestas</a></nav><main class="container"><h2>Módulo 1: Herencia en Java</h2><div class="definition-box"><strong>¿Qué es la herencia?</strong><br>Mecanismo por el cual una clase (subclase) adquiere atributos y métodos de otra (superclase). Representa una relación «es un» (ej. un Gerente es un Empleado). Evita duplicar código.</div><ul><li><strong>extends:</strong> Indica herencia. Java no permite herencia múltiple de clases.</li><li><strong>protected:</strong> Permite que los atributos sean visibles y utilizables directamente por las subclases, pero ocultos para el exterior.</li><li><strong>super(...):</strong> Llama al constructor de la superclase y debe ser la primera instrucción.</li><li><strong>@Override:</strong> Indica que sobrescribes un método heredado. En Java, todas las clases heredan de <code>Object</code>, por lo que podemos sobrescribir el método <code>toString()</code>.</li></ul><hr style="margin: 2rem 0; border: 1px solid #eee;"><h3>Proyecto: EjercicioHerencia (Múltiples Archivos)</h3><div class="explanation"><strong>Organización del Código:</strong><br>En IDEs como NetBeans o Eclipse, cada clase pública va en su propio archivo. Aquí veremos cómo <code>Gerente</code> y <code>Vendedor</code> heredan de <code>Empleado</code>, sobrescribiendo el método <code>calcularSalario()</code> y el método <code>toString()</code>.</div><h4><code>Empleado.java</code> (La Superclase)</h4><pre><code>
+    public class Empleado {
     protected String nombre;
     protected Double salarioBase;
 
@@ -19,10 +17,8 @@ public class Empleado {
     public String toString() {
         return "Empleado{" + "nombre=" + nombre + ", salarioBase=" + salarioBase + '}';
     }
-}</code></pre><h4><code>Gerente.java</code> (Subclase 1)</h4><pre><code>package Herencia;
-
-
-public class Gerente extends Empleado {
+}</code></pre><h4><code>Gerente.java</code> (Subclase 1)</h4><pre><code>
+    public class Gerente extends Empleado {
     private double bono;
 
     public Gerente(double bono, String nombre, Double salarioBase) {
@@ -39,9 +35,8 @@ public class Gerente extends Empleado {
     public String toString(){
         return "Gerente: " + super.toString();
     }
-}</code></pre><h4><code>Vendedor.java</code> (Subclase 2)</h4><pre><code>package Herencia;
-
-public class Vendedor extends Empleado {
+}</code></pre><h4><code>Vendedor.java</code> (Subclase 2)</h4><pre><code>
+    public class Vendedor extends Empleado {
     private double comision; 
     private double ventas;
 
@@ -64,9 +59,8 @@ public class Vendedor extends Empleado {
     public String toString(){
         return "Vendedor: " + super.toString();
     }
-}</code></pre><h4><code>Main.java</code> (El Ejecutor)</h4><pre><code>package Herencia;
-
-public class Main {
+}</code></pre><h4><code>Main.java</code> (El Ejecutor)</h4><pre><code>
+    public class Main {
     public static void main(String[] args) {
         Empleado empleado = new Empleado("Juan", 500000.0);
         Gerente gerente = new Gerente(100000.0, "Pablo", 500000.0);
